@@ -14,18 +14,20 @@ const BookData = ({setBookup}) => {
   if(localStorage.getItem("authtoken")===null){
     navigate('/')
   }
-    const fetchdata = async()=>{
-      
-      let res = await axios.get("http://localhost:5000/api/getdata/"+id,
-      
-       );
-      let data = res.data;
-      console.log(data);
-      setBookData(data)
-        
-    }
+   
     useEffect(() => {
-        fetchdata()
+      const fetchdata = async()=>{
+        let id=localStorage.getItem("id");
+
+        let res = await axios.get("http://localhost:5000/api/getdata/"+id,
+        
+         );
+        let data = res.data;
+        console.log(data);
+        setBookData(data)
+          
+      }
+      fetchdata();
     },[])
     
    
