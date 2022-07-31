@@ -9,10 +9,7 @@ const JWT_SECRET = process.env.SECRET_KEY;
 
 //registering the user
 router.post("/register",async function (req, res) {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
+
     try {
       let user = await studentdb.findOne({ email: req.body.email });
       if (user) {
@@ -54,10 +51,7 @@ router.post("/register",async function (req, res) {
 
 router.post('/login', async (req, res) => {
     // If there are errors, return Bad request and the errors
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
+   
   
     const { email, password } = req.body;
     try {

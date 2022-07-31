@@ -4,18 +4,15 @@ import { useState,useEffect} from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Register from './components/Register/Register'
 import Home from './components/HomePage/Home'
-import NamePage from './components/Lastpage/NamePage'
-import BookPage from './components/Lastpage/BookPage'
-import AddBook from './components/Lastpage/AddBook';
+import NamePage from './components/HomePage/NamePage'
+import BookPage from './components/HomePage/BookPage'
+import AddBook from './components/HomePage/AddBook';
 
 const App = () => {
   const [student,setStudent]=useState("")
   const[bookupdate,setBookup]=useState()
   useEffect(() => {
     setBookup()
-    
-  
-      
   }, [])
   
   
