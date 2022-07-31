@@ -1,0 +1,47 @@
+.d-flex.justify-content-evenly {
+    width: 100%;
+    height: 80vh;
+}
+.left {
+    border: 1px solid lightseagreen;
+    border-radius: 20px;
+    height: 100%;
+    height: 100%;
+    width: 30%;
+    opacity: 0.8;
+    background: aliceblue;
+    display: flex;
+    flex-direction:column;
+    padding: 3%;
+    font-weight: 500;
+}
+button {
+    border-radius: 10px;
+}
+.button {
+    margin-left: 2rem;
+}
+.right {
+    border: 1px solid lightseagreen;
+    border-radius: 20px;
+     height: 100%;
+     opacity: 0.8;
+    background: aliceblue;
+    width: 60%;
+    padding: 3%;
+    font-weight: 500;
+}
+.table {
+    width: 100%;
+    height: 40%;
+}
+
+.container-fluid.main {
+    padding-top: 2%;
+    height: 88vh;
+    background-image: url(https://images.pexels.com/photos/3747500/pexels-photo-3747500.jpeg?auto=compress&cs=tinysrgb&w=600);;
+}
+nav.navbar.navbar-dark {
+    background-color: brown;
+    padding-left: 20px;
+}
