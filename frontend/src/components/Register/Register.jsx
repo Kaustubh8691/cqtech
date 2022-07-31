@@ -12,18 +12,12 @@ const Register = () => {
   const [lastname, setLastname] = useState()
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
-  const [registers, setRegisters] = useState({
-    firstname: "",
-    lastname: "",
-    email: "",
-    password: "",
-  })
+ 
 
   const handleSubmit = async(e) => {
     e.preventDefault();
     console.log(email,password)
     try {
-      setRegisters({...registers,firstname:firstname,lastname:lastname,email:email,password:password});
         let register={firstname:firstname,lastname:lastname,email:email,password:password}
         let res = await axios.post("http://localhost:5000/api/register", register);
         let data = res.data;

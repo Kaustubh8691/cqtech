@@ -26,7 +26,7 @@ const BookData = ({setBookup}) => {
     }
     useEffect(() => {
         fetchdata()
-    })
+    },[])
     
    
   return (

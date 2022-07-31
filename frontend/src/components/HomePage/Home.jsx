@@ -7,9 +7,13 @@ import StudentCard from "./StudentCard";
 const Home = ({student,setBookup}) => {
   let navigate = useNavigate();
   console.log(localStorage.getItem("authtoken"));
+  if(sessionStorage.getItem("id")===null){
+    navigate('/')
+  }
 if(localStorage.getItem("authtoken")===null){
   navigate('/')
 }
+// console.log(sessionStorage.getItem("id"))
   const handleadd=()=>{
   navigate('/addbook')
   }

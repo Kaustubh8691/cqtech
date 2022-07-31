@@ -10,23 +10,22 @@ const Login = ({setStudent}) => {
     let navigate = useNavigate();
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
-    const [login, setLogin] = useState({
-        email: "",
-        password: "",
-    })
+    
     const handleSubmit = async(e) => {
         e.preventDefault();
         console.log(email,password)
         try {
-            setLogin({...login,email:email,password:password});
             let Login={email:email,password:password}
             let res = await axios.post("http://localhost:5000/api/login", Login);
             let data = res.data;
             console.log(data.dats1);
             setStudent(data.dats1)
             if(data.status==="success"){
-                localStorage.setItem("authtoken", data.token)
-                localStorage.setItem("id", data.dats1._id)
+                localStorage.setItem("authtoken", data.token);
+                localStorage.setItem("id", data.dats1._id);
+                sessionStorage.setItem("id",data.dats1._id)
+                sessionStorage.setItem("authtoken", data.token);
+
                 alert("User login Successfull")
                 navigate("/Home");
             }else{
